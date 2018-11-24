@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A464740053CB005F057C93B /* Pods_JobSearchOrganizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E026684F40F5373128D74F2 /* Pods_JobSearchOrganizer.framework */; };
 		A3FEC18321A9F9220099925C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FEC18221A9F9220099925C /* AppDelegate.swift */; };
 		A3FEC18521A9F9220099925C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FEC18421A9F9220099925C /* ViewController.swift */; };
 		A3FEC18821A9F9220099925C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18621A9F9220099925C /* Main.storyboard */; };
 		A3FEC18A21A9F9240099925C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18921A9F9240099925C /* Assets.xcassets */; };
 		A3FEC18D21A9F9240099925C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18B21A9F9240099925C /* LaunchScreen.storyboard */; };
 		A3FEC19821A9F9240099925C /* JobSearchOrganizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FEC19721A9F9240099925C /* JobSearchOrganizerTests.swift */; };
+		A3FEC1A321AA0B1A0099925C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC1A221AA0B1A0099925C /* GoogleService-Info.plist */; };
+		FEA346AA01255AD28B866E9C /* Pods_JobSearchOrganizerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C0BC6D1F05ED6DFA33BC7D /* Pods_JobSearchOrganizerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36A889EE963A48C3272CF56C /* Pods-JobSearchOrganizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobSearchOrganizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JobSearchOrganizerTests/Pods-JobSearchOrganizerTests.release.xcconfig"; sourceTree = "<group>"; };
+		5E026684F40F5373128D74F2 /* Pods_JobSearchOrganizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobSearchOrganizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FC511E65BF9302140440665 /* Pods-JobSearchOrganizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobSearchOrganizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer.release.xcconfig"; sourceTree = "<group>"; };
+		85C0BC6D1F05ED6DFA33BC7D /* Pods_JobSearchOrganizerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobSearchOrganizerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FEC17F21A9F9220099925C /* JobSearchOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobSearchOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FEC18221A9F9220099925C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3FEC18421A9F9220099925C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +43,9 @@
 		A3FEC19321A9F9240099925C /* JobSearchOrganizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobSearchOrganizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FEC19721A9F9240099925C /* JobSearchOrganizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchOrganizerTests.swift; sourceTree = "<group>"; };
 		A3FEC19921A9F9240099925C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3FEC1A221AA0B1A0099925C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE00469D6228BF9596B850AC /* Pods-JobSearchOrganizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobSearchOrganizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JobSearchOrganizerTests/Pods-JobSearchOrganizerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC1247FF7C37D38B56B53BF2 /* Pods-JobSearchOrganizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobSearchOrganizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A464740053CB005F057C93B /* Pods_JobSearchOrganizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +61,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEA346AA01255AD28B866E9C /* Pods_JobSearchOrganizerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86730F0E5F1CE78B6EEE24DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E026684F40F5373128D74F2 /* Pods_JobSearchOrganizer.framework */,
+				85C0BC6D1F05ED6DFA33BC7D /* Pods_JobSearchOrganizerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BAF07FDC9F8DC51EA249B4E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC1247FF7C37D38B56B53BF2 /* Pods-JobSearchOrganizer.debug.xcconfig */,
+				7FC511E65BF9302140440665 /* Pods-JobSearchOrganizer.release.xcconfig */,
+				CE00469D6228BF9596B850AC /* Pods-JobSearchOrganizerTests.debug.xcconfig */,
+				36A889EE963A48C3272CF56C /* Pods-JobSearchOrganizerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A3FEC17621A9F9210099925C = {
 			isa = PBXGroup;
 			children = (
 				A3FEC18121A9F9220099925C /* JobSearchOrganizer */,
 				A3FEC19621A9F9240099925C /* JobSearchOrganizerTests */,
 				A3FEC18021A9F9220099925C /* Products */,
+				8BAF07FDC9F8DC51EA249B4E /* Pods */,
+				86730F0E5F1CE78B6EEE24DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +117,7 @@
 				A3FEC18921A9F9240099925C /* Assets.xcassets */,
 				A3FEC18B21A9F9240099925C /* LaunchScreen.storyboard */,
 				A3FEC18E21A9F9240099925C /* Info.plist */,
+				A3FEC1A221AA0B1A0099925C /* GoogleService-Info.plist */,
 			);
 			path = JobSearchOrganizer;
 			sourceTree = "<group>";
@@ -103,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3FEC19C21A9F9240099925C /* Build configuration list for PBXNativeTarget "JobSearchOrganizer" */;
 			buildPhases = (
+				E44D21D37936F05D236ADEB6 /* [CP] Check Pods Manifest.lock */,
 				A3FEC17B21A9F9220099925C /* Sources */,
 				A3FEC17C21A9F9220099925C /* Frameworks */,
 				A3FEC17D21A9F9220099925C /* Resources */,
+				9D3B46D165768C1D4BEEA142 /* [CP] Embed Pods Frameworks */,
+				CD47F4A2B264C7A5E1969161 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,6 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3FEC19F21A9F9240099925C /* Build configuration list for PBXNativeTarget "JobSearchOrganizerTests" */;
 			buildPhases = (
+				B99F7772161CF811F7865467 /* [CP] Check Pods Manifest.lock */,
 				A3FEC18F21A9F9240099925C /* Sources */,
 				A3FEC19021A9F9240099925C /* Frameworks */,
 				A3FEC19121A9F9240099925C /* Resources */,
@@ -178,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3FEC18D21A9F9240099925C /* LaunchScreen.storyboard in Resources */,
+				A3FEC1A321AA0B1A0099925C /* GoogleService-Info.plist in Resources */,
 				A3FEC18A21A9F9240099925C /* Assets.xcassets in Resources */,
 				A3FEC18821A9F9220099925C /* Main.storyboard in Resources */,
 			);
@@ -191,6 +231,127 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D3B46D165768C1D4BEEA142 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B99F7772161CF811F7865467 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobSearchOrganizerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD47F4A2B264C7A5E1969161 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E44D21D37936F05D236ADEB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobSearchOrganizer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3FEC17B21A9F9220099925C /* Sources */ = {
@@ -358,6 +519,7 @@
 		};
 		A3FEC19D21A9F9240099925C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC1247FF7C37D38B56B53BF2 /* Pods-JobSearchOrganizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -376,6 +538,7 @@
 		};
 		A3FEC19E21A9F9240099925C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC511E65BF9302140440665 /* Pods-JobSearchOrganizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,6 +557,7 @@
 		};
 		A3FEC1A021A9F9240099925C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE00469D6228BF9596B850AC /* Pods-JobSearchOrganizerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -415,6 +579,7 @@
 		};
 		A3FEC1A121A9F9240099925C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36A889EE963A48C3272CF56C /* Pods-JobSearchOrganizerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
