@@ -1,22 +1,22 @@
 //
-//  SignInViewController.swift
+//  CompaniesViewController.swift
 //  JobSearchOrganizer
 //
-//  Created by Vanessa Flores on 11/24/18.
+//  Created by Vanessa Flores on 11/25/18.
 //  Copyright © 2018 Vanessa Flores. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import GoogleSignIn
 
-class SignInViewController: UIViewController, GIDSignInUIDelegate {
+class CompaniesViewController: UIViewController {
+    
+    let user = Auth.auth().currentUser
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
+        // Do any additional setup after loading the view.
     }
     
 

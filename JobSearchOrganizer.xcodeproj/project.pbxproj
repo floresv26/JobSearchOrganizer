@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6A464740053CB005F057C93B /* Pods_JobSearchOrganizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E026684F40F5373128D74F2 /* Pods_JobSearchOrganizer.framework */; };
+		A310FC2D21AB73DC00ACA950 /* CompaniesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A310FC2C21AB73DC00ACA950 /* CompaniesViewController.swift */; };
+		A310FC2F21ACD68800ACA950 /* CompaniesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A310FC2E21ACD68800ACA950 /* CompaniesViewControllerTests.swift */; };
+		A310FC3121B9CADF00ACA950 /* SignInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A310FC3021B9CADF00ACA950 /* SignInViewControllerTests.swift */; };
 		A33EB48F21AA204700D27FD4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33EB48E21AA204700D27FD4 /* SignInViewController.swift */; };
 		A3FEC18321A9F9220099925C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FEC18221A9F9220099925C /* AppDelegate.swift */; };
 		A3FEC18821A9F9220099925C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18621A9F9220099925C /* Main.storyboard */; };
@@ -33,6 +36,9 @@
 		5E026684F40F5373128D74F2 /* Pods_JobSearchOrganizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobSearchOrganizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC511E65BF9302140440665 /* Pods-JobSearchOrganizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobSearchOrganizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer.release.xcconfig"; sourceTree = "<group>"; };
 		85C0BC6D1F05ED6DFA33BC7D /* Pods_JobSearchOrganizerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobSearchOrganizerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A310FC2C21AB73DC00ACA950 /* CompaniesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesViewController.swift; sourceTree = "<group>"; };
+		A310FC2E21ACD68800ACA950 /* CompaniesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesViewControllerTests.swift; sourceTree = "<group>"; };
+		A310FC3021B9CADF00ACA950 /* SignInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerTests.swift; sourceTree = "<group>"; };
 		A33EB48E21AA204700D27FD4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A3FEC17F21A9F9220099925C /* JobSearchOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobSearchOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FEC18221A9F9220099925C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +94,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A310FC3221B9CAED00ACA950 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A33EB48E21AA204700D27FD4 /* SignInViewController.swift */,
+				A310FC2C21AB73DC00ACA950 /* CompaniesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A310FC3321B9CB0100ACA950 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3FEC18621A9F9220099925C /* Main.storyboard */,
+				A3FEC18B21A9F9240099925C /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A310FC3421B9CB0B00ACA950 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A310FC2E21ACD68800ACA950 /* CompaniesViewControllerTests.swift */,
+				A310FC3021B9CADF00ACA950 /* SignInViewControllerTests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A3FEC17621A9F9210099925C = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				A3FEC18221A9F9220099925C /* AppDelegate.swift */,
-				A33EB48E21AA204700D27FD4 /* SignInViewController.swift */,
-				A3FEC18621A9F9220099925C /* Main.storyboard */,
+				A310FC3221B9CAED00ACA950 /* Controller */,
+				A310FC3321B9CB0100ACA950 /* View */,
 				A3FEC18921A9F9240099925C /* Assets.xcassets */,
-				A3FEC18B21A9F9240099925C /* LaunchScreen.storyboard */,
 				A3FEC18E21A9F9240099925C /* Info.plist */,
 				A3FEC1A221AA0B1A0099925C /* GoogleService-Info.plist */,
 			);
@@ -127,6 +159,7 @@
 			children = (
 				A3FEC19721A9F9240099925C /* JobSearchOrganizerTests.swift */,
 				A3FEC19921A9F9240099925C /* Info.plist */,
+				A310FC3421B9CB0B00ACA950 /* Controller */,
 			);
 			path = JobSearchOrganizerTests;
 			sourceTree = "<group>";
@@ -358,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A310FC2D21AB73DC00ACA950 /* CompaniesViewController.swift in Sources */,
 				A33EB48F21AA204700D27FD4 /* SignInViewController.swift in Sources */,
 				A3FEC18321A9F9220099925C /* AppDelegate.swift in Sources */,
 			);
@@ -367,6 +401,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A310FC2F21ACD68800ACA950 /* CompaniesViewControllerTests.swift in Sources */,
+				A310FC3121B9CADF00ACA950 /* SignInViewControllerTests.swift in Sources */,
 				A3FEC19821A9F9240099925C /* JobSearchOrganizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
