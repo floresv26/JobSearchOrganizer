@@ -14,6 +14,7 @@ class SignInView: UIView {
 //    var googleSignInButton: GIDSignInButton! = GIDSignInButton()
     lazy var googleSignInButton: GIDSignInButton = {
         let button = GIDSignInButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -21,14 +22,14 @@ class SignInView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .yellow
         self.addSubview(googleSignInButton)
-        setUpView()
+        setupViewLayout()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpView() {
+    func setupViewLayout() {
         NSLayoutConstraint.activate([
             googleSignInButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             googleSignInButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
