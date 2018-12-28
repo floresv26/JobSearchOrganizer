@@ -114,6 +114,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A362BA0121C55CB000B12436 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A3FEC17621A9F9210099925C = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				A3FEC19921A9F9240099925C /* Info.plist */,
+				A362BA0121C55CB000B12436 /* View */,
 				A310FC3B21B9D1EE00ACA950 /* Controller */,
 			);
 			path = JobSearchOrganizerTests;

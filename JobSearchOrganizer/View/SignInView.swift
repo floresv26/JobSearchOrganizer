@@ -18,10 +18,19 @@ class SignInView: UIView {
         return button
     }()
     
+    let startFreeTrialButton: UIButton = {
+       let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Start Free Trial", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .yellow
         self.addSubview(googleSignInButton)
+        self.addSubview(startFreeTrialButton)
         setupViewLayout()
     }
     
@@ -32,7 +41,10 @@ class SignInView: UIView {
     func setupViewLayout() {
         NSLayoutConstraint.activate([
             googleSignInButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            googleSignInButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            googleSignInButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            
+            startFreeTrialButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            startFreeTrialButton.topAnchor.constraint(equalTo: googleSignInButton.bottomAnchor, constant: 50)
         ])
     }
     

@@ -31,6 +31,10 @@ class SignInViewControllerTests: XCTestCase {
     func test_GoogleSignInButton_AfterViewDidLoad_IsNotNil() {
         XCTAssertNotNil(sut.signInView.googleSignInButton)
     }
+    
+    func test_StartFreeTrialButton_AfterViewDidLoad_IsNotNil() {
+        XCTAssertNotNil(sut.signInView.startFreeTrialButton)
+    }
  
 
 }
