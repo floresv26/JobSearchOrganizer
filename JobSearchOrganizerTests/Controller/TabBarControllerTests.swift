@@ -14,12 +14,7 @@ class TabBarControllerTests: XCTestCase {
     var sut: TabBarController!
 
     override func setUp() {
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let tabBarCntr = storyboard.instantiateViewController(withIdentifier: "TabBarController")
-//        sut = (tabBarCntr as! TabBarController)
         sut = TabBarController()
-        
         sut.loadViewIfNeeded()
     }
 
@@ -45,12 +40,11 @@ class TabBarControllerTests: XCTestCase {
         XCTAssertEqual(title, "Companies")
     }
     
-//    func test_NavigationTitle_ForCompaniesTab_IsCompanies() {
-//        let viewController = sut.viewControllers?.first as! UINavigationController
-//        let title = viewController.viewControllers.first?.navigationItem.title
-//
-//        XCTAssertEqual(title, "Companies")
-//    }
+    func test_CompaniesTab_HasNavigationController_IsNotNil() {
+        let viewController = sut.viewControllers?.first as! UINavigationController
+        
+        XCTAssertNotNil(viewController.navigationBar)
+    }
 
     func test_SecondTabTitle_AfterViewDidLoad_IsInformationals() {
         let viewController = sut.viewControllers?[1]
@@ -59,10 +53,6 @@ class TabBarControllerTests: XCTestCase {
         XCTAssertEqual(title, "Informationals")
     }
     
-//    func test_NavigationTitle_ForInformationalsTab_IsInformationalInterviews() {
-//
-//    }
-    
     func test_ThirdTabTitle_AfterViewDidLoad_IsApplications() {
         let viewController = sut.viewControllers?[2]
         let title = viewController?.tabBarItem.title
@@ -70,18 +60,11 @@ class TabBarControllerTests: XCTestCase {
         XCTAssertEqual(title, "Applications")
     }
     
-//    func test_NavigationTitle_ForApplicationsTab_IsApplicationsSubmitted() {
-//
-//    }
-    
     func test_FourthTabTitle_AfterViewDidLoad_IsInterviews() {
-        let viewController = sut.viewControllers?[3]
+        let viewController = sut.viewControllers?.last
         let title = viewController?.tabBarItem.title
         
         XCTAssertEqual(title, "Interviews")
     }
     
-//    func test_NavigationTitle_ForInterviewsTab_IsInterviewsScheduled() {
-//
-//    }
 }

@@ -9,11 +9,29 @@
 import UIKit
 
 class InformationalsViewController: UIViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        view.backgroundColor = UIColor.red
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.red
+        navigationItem.title = "Informationals Requested"
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!
+        ]
+        
+        if #available(iOS 11, *) {
+            navigationController?.navigationBar.largeTitleTextAttributes = [
+                NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!
+            ]
+        }
     }
     
 
