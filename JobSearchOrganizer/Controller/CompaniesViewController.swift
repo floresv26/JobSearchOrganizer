@@ -13,6 +13,7 @@ class CompaniesViewController: UIViewController {
     var searchButton: UIBarButtonItem!
     var sortButton: UIBarButtonItem!
     var moreButton: UIBarButtonItem!
+    var addCompanyView: AddCompanyView!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -38,7 +39,14 @@ class CompaniesViewController: UIViewController {
         navigationBarButtons()
         navigationItem.leftBarButtonItem = searchButton
         navigationItem.rightBarButtonItems = [moreButton, sortButton]
-//        navigationItem.setRightBarButtonItems([moreButton, sortButton], animated: true)
+        
+        setupAddCompanyView()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
     func navigationBarButtons() {
@@ -65,6 +73,20 @@ class CompaniesViewController: UIViewController {
     
     @objc func moreButtonPressed() {
         
+    }
+    
+    func setupAddCompanyView() {
+        addCompanyView = AddCompanyView()
+//        let navigationBarHeight = navigationController?.navigationBar.frame.height
+//        let navigationBarWidth = navigationController?.navigationBar.frame.width
+//        addCompanyView.frame = CGRect(x: 0, y: (navigationBarHeight ?? 44) + 20, width: navigationBarWidth ?? UIScreen.main.bounds.width, height: 50)
+        addCompanyView.translatesAutoresizingMaskIntoConstraints = false
+        addCompanyView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        addCompanyView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        addCompanyView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        addCompanyView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        addCompanyView.backgroundColor = UIColor.red
+        view.addSubview(addCompanyView)
     }
     
 }

@@ -42,6 +42,10 @@ class CompaniesViewControllerTests: XCTestCase {
         
         XCTAssertEqual(sut.navigationItem.rightBarButtonItems, rightBarButtons)
     }
+    
+    func test_AddCompanyView_AfterViewDidLoad_IsNotNil() {
+        XCTAssertNotNil(sut.addCompanyView)
+    }
 
 
 }
