@@ -29,7 +29,7 @@ class InformationalsViewControllerTests: XCTestCase {
     func test_InformationalsViewController_NavigationTitle_IsInformationalInterviewsRequested() {
         let title = sut.navigationItem.title
         
-        XCTAssertEqual(title, "Informational Interviews Requested")
+        XCTAssertEqual(title, "Informational Interviews")
     }
 
 }

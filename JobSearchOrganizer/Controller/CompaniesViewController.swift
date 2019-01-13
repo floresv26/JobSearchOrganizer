@@ -28,11 +28,13 @@ class CompaniesViewController: UIViewController {
         navigationItem.title = "Companies"
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "Avenir", size: 28)!,
+            NSAttributedString.Key.foregroundColor: UIColor.Primary.lightText
         ]
         
         if #available(iOS 11, *) {
             navigationController?.navigationBar.largeTitleTextAttributes = [
-                NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!
+                NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!,
+                NSAttributedString.Key.foregroundColor: UIColor.Primary.lightText
             ]
         }
         
@@ -80,13 +82,13 @@ class CompaniesViewController: UIViewController {
 //        let navigationBarHeight = navigationController?.navigationBar.frame.height
 //        let navigationBarWidth = navigationController?.navigationBar.frame.width
 //        addCompanyView.frame = CGRect(x: 0, y: (navigationBarHeight ?? 44) + 20, width: navigationBarWidth ?? UIScreen.main.bounds.width, height: 50)
-        addCompanyView.translatesAutoresizingMaskIntoConstraints = false
-        addCompanyView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        addCompanyView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        addCompanyView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        addCompanyView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         addCompanyView.backgroundColor = UIColor.red
         view.addSubview(addCompanyView)
+        addCompanyView.translatesAutoresizingMaskIntoConstraints = false
+        addCompanyView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        addCompanyView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        addCompanyView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        addCompanyView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
 }

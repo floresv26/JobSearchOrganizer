@@ -16,20 +16,22 @@ class InformationalsViewController: UIViewController {
         view.backgroundColor = UIColor.red
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barTintColor = UIColor.white
-        
+        navigationController?.navigationBar.barTintColor = UIColor.Primary.primaryBlue
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Informationals Requested"
+        navigationItem.title = "Informational Interviews"
         navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!
+            NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!,
+            NSAttributedString.Key.foregroundColor: UIColor.Primary.lightText
         ]
         
         if #available(iOS 11, *) {
             navigationController?.navigationBar.largeTitleTextAttributes = [
-                NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!
+                NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!,
+                NSAttributedString.Key.foregroundColor: UIColor.Primary.lightText
             ]
         }
     }

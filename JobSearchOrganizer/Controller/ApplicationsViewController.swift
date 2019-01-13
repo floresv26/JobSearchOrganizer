@@ -16,6 +16,7 @@ class ApplicationsViewController: UIViewController {
         view.backgroundColor = UIColor.yellow
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.Primary.primaryBlue
     }
 
     override func viewDidLoad() {
@@ -23,12 +24,14 @@ class ApplicationsViewController: UIViewController {
 
        navigationItem.title = "Applications Submitted"
         navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!
+            NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!,
+            NSAttributedString.Key.foregroundColor: UIColor.Primary.lightText
         ]
         
         if #available(iOS 11, *) {
             navigationController?.navigationBar.largeTitleTextAttributes = [
-                NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!
+                NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!,
+                NSAttributedString.Key.foregroundColor: UIColor.Primary.lightText
             ]
         }
     }
