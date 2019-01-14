@@ -8,17 +8,25 @@
 
 import UIKit
 
-class CompaniesViewController: UIViewController {
+class CompaniesViewController: UIViewController, UIScrollViewDelegate {
     
     var searchButton: UIBarButtonItem!
     var sortButton: UIBarButtonItem!
     var moreButton: UIBarButtonItem!
+//    var containerView: UIView!
     var addCompanyView: AddCompanyView!
+    
+    let scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.backgroundColor = UIColor.cyan
+        return sv
+    }()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.lightGray
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barTintColor = UIColor.Primary.primaryBlue
     }
@@ -42,14 +50,22 @@ class CompaniesViewController: UIViewController {
         navigationItem.leftBarButtonItem = searchButton
         navigationItem.rightBarButtonItems = [moreButton, sortButton]
         
-        setupAddCompanyView()
-
+        setupScrollView()
+        
+//        setupContainerView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//
+//        scrollView.frame = UIScreen.main.bounds
+//        containerView.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)
+//    }
     
     func navigationBarButtons() {
         searchButton = UIBarButtonItem(image: UIImage(named: "search"), style: .plain, target: self, action: #selector(searchBarButtonPressed))
@@ -77,18 +93,41 @@ class CompaniesViewController: UIViewController {
         
     }
     
+//    func setupContainerView() {
+//        containerView = UIView()
+////        setupAddCompanyView()
+//    }
+    
+    func setupScrollView() {
+        view.addSubview(scrollView)
+        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8.0).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8.0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        setupAddCompanyView()
+    }
+    
     func setupAddCompanyView() {
         addCompanyView = AddCompanyView()
-//        let navigationBarHeight = navigationController?.navigationBar.frame.height
-//        let navigationBarWidth = navigationController?.navigationBar.frame.width
-//        addCompanyView.frame = CGRect(x: 0, y: (navigationBarHeight ?? 44) + 20, width: navigationBarWidth ?? UIScreen.main.bounds.width, height: 50)
-        addCompanyView.backgroundColor = UIColor.lightGray
-        view.addSubview(addCompanyView)
-        addCompanyView.translatesAutoresizingMaskIntoConstraints = false
-        addCompanyView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        addCompanyView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        addCompanyView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        addCompanyView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        addCompanyView.backgroundColor = UIColor.yellow
+        scrollView.addSubview(addCompanyView)
+        addCompanyView.frame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: 50)
+        
     }
+    
+//    func setupAddCompanyView() {
+//        addCompanyView = AddCompanyView()
+//        addCompanyView.backgroundColor = UIColor.lightGray
+////        view.addSubview(addCompanyView)
+//        containerView.addSubview(addCompanyView)
+//        addCompanyView.translatesAutoresizingMaskIntoConstraints = false
+//        addCompanyView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+//        addCompanyView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+//        addCompanyView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//        addCompanyView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//    }
+    
+    
     
 }

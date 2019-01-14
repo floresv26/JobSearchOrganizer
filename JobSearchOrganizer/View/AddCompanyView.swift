@@ -21,6 +21,7 @@ class AddCompanyView: UIView {
     
     lazy var addCompanyTextField: UITextField = {
         let addTextField = UITextField()
+        addTextField.backgroundColor = UIColor.orange
         addTextField.frame = CGRect(x: 0, y: 0, width: 200, height: 30)
         addTextField.placeholder = "Add a company"
         addTextField.font = UIFont(name: "Avenir", size: 17)
@@ -44,12 +45,14 @@ class AddCompanyView: UIView {
     
     lazy var addCompanyButton: UIButton = {
         let addButton = UIButton(type: .custom)
-        addButton.frame = CGRect(x: 0,
+        addButton.backgroundColor = UIColor.brown
+        addButton.frame = CGRect(x: 48,
                                  y: 0,
-                                 width: 50,
-                                 height: 50)
+                                 width: 48,
+                                 height: 48)
         addButton.accessibilityLabel = "Add Company"
         addButton.setImage(UIImage(named: "add_dark"), for: .normal)
+        addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
         
         return addButton
     }()
@@ -62,8 +65,13 @@ class AddCompanyView: UIView {
 //        addCompanyTextField.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor).isActive = true
         
         addSubview(addCompanyButton)
+//        addCompanyButton.translatesAutoresizingMaskIntoConstraints = false
 //        addCompanyButton.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor).isActive = true
 //        addCompanyButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
+    }
+    
+    @objc func addButtonPressed() {
+        
     }
     
 }
