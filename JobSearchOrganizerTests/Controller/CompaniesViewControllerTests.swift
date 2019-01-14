@@ -46,6 +46,10 @@ class CompaniesViewControllerTests: XCTestCase {
     func test_AddCompanyView_AfterViewDidLoad_IsNotNil() {
         XCTAssertNotNil(sut.addCompanyView)
     }
+    
+    func test_AddCompanyTextField_AfterViewDidLoad_IsNotNil() {
+        XCTAssertNotNil(sut.addCompanyView.addCompanyTextField)
+    }
 
 
 }

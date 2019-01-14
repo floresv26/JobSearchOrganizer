@@ -82,7 +82,7 @@ class CompaniesViewController: UIViewController {
 //        let navigationBarHeight = navigationController?.navigationBar.frame.height
 //        let navigationBarWidth = navigationController?.navigationBar.frame.width
 //        addCompanyView.frame = CGRect(x: 0, y: (navigationBarHeight ?? 44) + 20, width: navigationBarWidth ?? UIScreen.main.bounds.width, height: 50)
-        addCompanyView.backgroundColor = UIColor.red
+        addCompanyView.backgroundColor = UIColor.lightGray
         view.addSubview(addCompanyView)
         addCompanyView.translatesAutoresizingMaskIntoConstraints = false
         addCompanyView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
