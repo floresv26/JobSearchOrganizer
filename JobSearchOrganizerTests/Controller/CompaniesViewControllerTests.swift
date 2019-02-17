@@ -31,5 +31,13 @@ class CompaniesViewControllerTests: XCTestCase {
         
         XCTAssertEqual(title, "Companies")
     }
+    
+    func test_AddCompanyView_AfterViewDidLoad_IsNotNil() {
+        XCTAssertNotNil(sut.addCompanyView)
+    }
+    
+    func test_AddCompanyView_IsDescendantOfView() {
+        XCTAssertTrue(sut.addCompanyView.isDescendant(of: sut.view))
+    }
 
 }

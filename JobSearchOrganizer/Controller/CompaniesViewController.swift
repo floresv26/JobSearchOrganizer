@@ -9,16 +9,21 @@
 import UIKit
 
 class CompaniesViewController: UIViewController {
+    
+    var addCompanyView: AddCompanyView!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barTintColor = UIColor.Primary.primaryBlue
+        
+        edgesForExtendedLayout = []
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "Companies"
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "Avenir", size: 28)!,
@@ -32,7 +37,26 @@ class CompaniesViewController: UIViewController {
             ]
         }
         
+        addCompanyView = AddCompanyView()
+        addCompanyView.translatesAutoresizingMaskIntoConstraints = false
+        
+        setupView()
+        
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    func setupView() {
+        view.addSubview(addCompanyView)
+        addCompanyView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        addCompanyView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        addCompanyView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        addCompanyView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        
+        print(addCompanyView.frame.origin)
+    }
 
 }
+
