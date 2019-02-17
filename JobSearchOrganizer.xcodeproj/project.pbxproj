@@ -16,6 +16,8 @@
 		A3D765CA2219E8D4004B3041 /* AddCompanyViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765C92219E8D4004B3041 /* AddCompanyViewTests.swift */; };
 		A3D765CC2219E93D004B3041 /* AddCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765CB2219E93D004B3041 /* AddCompanyView.swift */; };
 		A3D765CE2219F16A004B3041 /* TextFieldBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765CD2219F16A004B3041 /* TextFieldBorder.swift */; };
+		A3D765D12219F94C004B3041 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765D02219F94C004B3041 /* Company.swift */; };
+		A3D765D32219FB13004B3041 /* LocalCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765D22219FB13004B3041 /* LocalCollection.swift */; };
 		A3FEC18321A9F9220099925C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FEC18221A9F9220099925C /* AppDelegate.swift */; };
 		A3FEC18821A9F9220099925C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18621A9F9220099925C /* Main.storyboard */; };
 		A3FEC18A21A9F9240099925C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18921A9F9240099925C /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		A3D765C92219E8D4004B3041 /* AddCompanyViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyViewTests.swift; sourceTree = "<group>"; };
 		A3D765CB2219E93D004B3041 /* AddCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyView.swift; sourceTree = "<group>"; };
 		A3D765CD2219F16A004B3041 /* TextFieldBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBorder.swift; sourceTree = "<group>"; };
+		A3D765D02219F94C004B3041 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		A3D765D22219FB13004B3041 /* LocalCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCollection.swift; sourceTree = "<group>"; };
 		A3FEC17F21A9F9220099925C /* JobSearchOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobSearchOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FEC18221A9F9220099925C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3FEC18721A9F9220099925C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +139,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A3D765CF2219F934004B3041 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3D765D02219F94C004B3041 /* Company.swift */,
+				A3D765D22219FB13004B3041 /* LocalCollection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A3FEC17621A9F9210099925C = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +171,7 @@
 		A3FEC18121A9F9220099925C /* JobSearchOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				A3D765CF2219F934004B3041 /* Model */,
 				A3D765C52219E89B004B3041 /* View */,
 				A3D765B62218F4FA004B3041 /* Controller */,
 				A3FEC18221A9F9220099925C /* AppDelegate.swift */,
@@ -360,8 +374,10 @@
 				A3D765BC2218F641004B3041 /* CompaniesViewController.swift in Sources */,
 				A3D765CC2219E93D004B3041 /* AddCompanyView.swift in Sources */,
 				A3D765CE2219F16A004B3041 /* TextFieldBorder.swift in Sources */,
+				A3D765D12219F94C004B3041 /* Company.swift in Sources */,
 				A3FEC18321A9F9220099925C /* AppDelegate.swift in Sources */,
 				A3D765BA2218F552004B3041 /* TabBarController.swift in Sources */,
+				A3D765D32219FB13004B3041 /* LocalCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
