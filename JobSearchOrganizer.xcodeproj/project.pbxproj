@@ -11,6 +11,8 @@
 		A3D765B82218F50E004B3041 /* TabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765B72218F50E004B3041 /* TabBarControllerTests.swift */; };
 		A3D765BA2218F552004B3041 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765B92218F552004B3041 /* TabBarController.swift */; };
 		A3D765BC2218F641004B3041 /* CompaniesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765BB2218F641004B3041 /* CompaniesViewController.swift */; };
+		A3D765BE2218F877004B3041 /* CompaniesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765BD2218F877004B3041 /* CompaniesViewControllerTests.swift */; };
+		A3D765C02218F960004B3041 /* CollorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765BF2218F960004B3041 /* CollorPalette.swift */; };
 		A3FEC18321A9F9220099925C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FEC18221A9F9220099925C /* AppDelegate.swift */; };
 		A3FEC18821A9F9220099925C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18621A9F9220099925C /* Main.storyboard */; };
 		A3FEC18A21A9F9240099925C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18921A9F9240099925C /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		A3D765B72218F50E004B3041 /* TabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerTests.swift; sourceTree = "<group>"; };
 		A3D765B92218F552004B3041 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A3D765BB2218F641004B3041 /* CompaniesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesViewController.swift; sourceTree = "<group>"; };
+		A3D765BD2218F877004B3041 /* CompaniesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesViewControllerTests.swift; sourceTree = "<group>"; };
+		A3D765BF2218F960004B3041 /* CollorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollorPalette.swift; sourceTree = "<group>"; };
 		A3FEC17F21A9F9220099925C /* JobSearchOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobSearchOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FEC18221A9F9220099925C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3FEC18721A9F9220099925C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				A3D765B72218F50E004B3041 /* TabBarControllerTests.swift */,
+				A3D765BD2218F877004B3041 /* CompaniesViewControllerTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				A3FEC18B21A9F9240099925C /* LaunchScreen.storyboard */,
 				A3FEC18E21A9F9240099925C /* Info.plist */,
 				A3FEC1A221AA0B1A0099925C /* GoogleService-Info.plist */,
+				A3D765BF2218F960004B3041 /* CollorPalette.swift */,
 			);
 			path = JobSearchOrganizer;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D765C02218F960004B3041 /* CollorPalette.swift in Sources */,
 				A3D765BC2218F641004B3041 /* CompaniesViewController.swift in Sources */,
 				A3FEC18321A9F9220099925C /* AppDelegate.swift in Sources */,
 				A3D765BA2218F552004B3041 /* TabBarController.swift in Sources */,
@@ -335,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D765BE2218F877004B3041 /* CompaniesViewControllerTests.swift in Sources */,
 				A3D765B82218F50E004B3041 /* TabBarControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
