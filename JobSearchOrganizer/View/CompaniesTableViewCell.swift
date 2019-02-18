@@ -10,6 +10,16 @@ import UIKit
 
 class CompaniesTableViewCell: UITableViewCell {
     
+    let contactPickerViewData : [Int:String] = [2 : "Yes", 1 : "No"]
+    let motivationPickerViewData : [Int:String] = [5 : "Highly motivated",
+                                                   4 : "Excited",
+                                                   3 : "Neutral",
+                                                   2 : "No too excited",
+                                                   1 : "Don't know anything about them"]
+    let currentlyHiringPickerViewData : [Int:String] = [3 : "Ideal position available",
+                                                        2 : "Generally hiring",
+                                                        1 : "Not currently hiring"]
+    
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Avenir", size: 17)
@@ -17,17 +27,6 @@ class CompaniesTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-//    lazy var contactButton: UIButton = {
-//        let button = UIButton(type: UIButton.ButtonType.system)
-//        button.setTitle("Do you have a contact?   - Select -", for: .normal)
-//        button.setTitleColor(UIColor.Text.lightGray, for: .normal)
-//        button.contentHorizontalAlignment = .left
-//        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//
-//        return button
-//    }()
     
     lazy var contactQuestionView: QuestionsView = {
         let view = QuestionsView()
@@ -100,6 +99,14 @@ class CompaniesTableViewCell: UITableViewCell {
     
     func populate(company: Company) {
         nameLabel.text = company.name
+        if company.hasContact != 0 {
+            contactQuestionView.questionLabel.text = "Contact"
+            let title = contactPickerViewData[company.hasContact]
+            contactQuestionView.pickerButton.setTitle(title, for: .normal)
+        }
+        print("Has Contact: \(company.hasContact)")
+        print("Motivation level: \(company.motivation)")
+        print("Currently Hiring: \(company.currentlyHiring)")
     }
 
 }

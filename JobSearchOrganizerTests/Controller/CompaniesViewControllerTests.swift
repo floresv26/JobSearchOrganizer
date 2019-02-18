@@ -47,6 +47,20 @@ class CompaniesViewControllerTests: XCTestCase {
     func test_LoadingView_SetsTableViewDataSource() {
         XCTAssertTrue(sut.companiesTableView.dataSource is CompaniesViewController)
     }
+    
+    func test_LoadingView_SetsTableViewDelegate() {
+        XCTAssertTrue(sut.companiesTableView.delegate is CompaniesViewController)
+    }
+    
+//    func test_ContactsPickerView_ContactButtonTapped_IsDispalyed() {
+//        let mockTableView = MockTableView.mockTableView(withDataSource: sut as UITableViewDataSource)
+//
+//        let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockItemCell
+//
+//        cell.contactQuestionView.pickerButton.sendActions(for: .touchUpInside)
+//
+//        XCTAssertTrue(sut.contactsPickerView.isDescendant(of: sut.view))
+//    }
 
 }
 

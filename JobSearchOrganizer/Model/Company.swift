@@ -11,16 +11,16 @@ import Foundation
 struct Company {
     
     var name: String
-    var hasContact: Bool?
-    var motivation: Int?
-    var currentlyHiring: Int?
+    var hasContact: Int = 0
+    var motivation: Int = 0
+    var currentlyHiring: Int = 0
     
     var dictionary: [String: Any] {
         return [
             "name": name,
-            "hasContact": hasContact ?? false,
-            "motivation": motivation ?? 0,
-            "currentlyHiring": currentlyHiring ?? 1,
+            "hasContact": hasContact,
+            "motivation": motivation,
+            "currentlyHiring": currentlyHiring,
         ]
     }
     
@@ -28,7 +28,7 @@ struct Company {
         self.name = name
     }
     
-    init(name: String, hasContact: Bool?,
+    init(name: String, hasContact: Int?,
          motivation: Int?, currentlyHiring: Int?) {
         self.name = name
     }
@@ -38,7 +38,7 @@ struct Company {
 extension Company: DocumentSerializable {
     init?(dictionary: [String : Any]) {
         guard let name = dictionary["name"] as? String,
-            let hasContact = dictionary["hasContact"] as? Bool,
+            let hasContact = dictionary["hasContact"] as? Int,
             let motivation = dictionary["motivation"] as? Int,
             let currentlyHiring = dictionary["currentlyHiring"] as? Int else { return nil }
         
