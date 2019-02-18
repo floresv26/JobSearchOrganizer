@@ -39,5 +39,45 @@ class CompaniesViewControllerTests: XCTestCase {
     func test_AddCompanyView_IsDescendantOfView() {
         XCTAssertTrue(sut.addCompanyView.isDescendant(of: sut.view))
     }
+    
+    func test_CompaniesTableView_AfterViewDidLoad_IsNotNil() {
+        XCTAssertNotNil(sut.companiesTableView)
+    }
+    
+    func test_LoadingView_SetsTableViewDataSource() {
+        XCTAssertTrue(sut.companiesTableView.dataSource is CompaniesViewController)
+    }
 
+}
+
+extension CompaniesViewControllerTests {
+    class MockTableView: UITableView {
+        var cellGotDequeued = false
+        
+        override func dequeueReusableCell(withIdentifier identifier: String,
+                                          for indexPath: IndexPath) -> UITableViewCell {
+            cellGotDequeued = true
+            
+            return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
+        
+        class func mockTableView(withDataSource dataSource: UITableViewDataSource) -> MockTableView {
+            let mockTableView = MockTableView(
+                frame: CGRect(x: 0, y: 0, width: 1125, height: 2436),
+                style: .plain)
+            
+            mockTableView.dataSource = dataSource
+            mockTableView.register(MockItemCell.self, forCellReuseIdentifier: "CompaniesTableViewCell")
+            
+            return mockTableView
+        }
+    }
+    
+    class MockItemCell: CompaniesTableViewCell {
+        var catchedItem: Company?
+        
+        override func populate(company: Company) {
+            catchedItem = company
+        }
+    }
 }

@@ -11,17 +11,26 @@ import Foundation
 struct Company {
     
     var name: String
-    var hasContact: Bool
-    var motivation: Int
-    var currentlyHiring: Int
+    var hasContact: Bool?
+    var motivation: Int?
+    var currentlyHiring: Int?
     
     var dictionary: [String: Any] {
         return [
             "name": name,
-            "hasContact": hasContact,
-            "motivation": motivation,
-            "currentlyHiring": currentlyHiring,
+            "hasContact": hasContact ?? false,
+            "motivation": motivation ?? 0,
+            "currentlyHiring": currentlyHiring ?? 1,
         ]
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    init(name: String, hasContact: Bool?,
+         motivation: Int?, currentlyHiring: Int?) {
+        self.name = name
     }
     
 }

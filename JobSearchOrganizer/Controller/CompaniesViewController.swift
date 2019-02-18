@@ -12,7 +12,7 @@ import FirebaseFirestore
 class CompaniesViewController: UIViewController {
     
     var addCompanyView: AddCompanyView!
-
+    var companiesTableView: UITableView!
     
     let firestore = Firestore.firestore()
     private var listener: ListenerRegistration?
@@ -36,6 +36,12 @@ class CompaniesViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.Primary.primaryBlue
         
         edgesForExtendedLayout = []
+        
+        observeQuery()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func viewDidLoad() {
@@ -55,18 +61,68 @@ class CompaniesViewController: UIViewController {
             ]
         }
         
-        addCompanyView = AddCompanyView()
-        addCompanyView.translatesAutoresizingMaskIntoConstraints = false
-        addCompanyView.delegate = self
-        addCompanyView.companyNameTextField.delegate = self
-        
+        initializeAddCompanyView()
+        initializeCompaniesTableView()
         setupView()
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        stopObserving()
     }
+    
+    
+    // Mark: Set up the view
+    
+    func initializeAddCompanyView() {
+        addCompanyView = AddCompanyView()
+        addCompanyView.translatesAutoresizingMaskIntoConstraints = false
+        addCompanyView.delegate = self
+        addCompanyView.companyNameTextField.delegate = self
+        addCompanyView.addCompanyButton.addTarget(self, action: #selector(addCompanyButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func addCompanyButtonTapped(_ sender: UIButton) {
+        guard let validatedText = addCompanyView.companyNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !validatedText.isEmpty else {
+            return
+        }
+        
+        let company = Company(name: validatedText)
+        
+        addCompanyView.resetAddCompanyView()
+        addCompanyView.companyNameTextField.resignFirstResponder()
+        addCompanyToCollection(company: company)
+    }
+    
+    func initializeCompaniesTableView() {
+        companiesTableView = UITableView()
+        companiesTableView.translatesAutoresizingMaskIntoConstraints = false
+        companiesTableView.delegate = self
+        companiesTableView.dataSource = self
+        companiesTableView.register(CompaniesTableViewCell.self, forCellReuseIdentifier: "CompaniesTableViewCell")
+        query = baseQuery()
+    }
+    
+    func setupView() {
+        view.addSubview(addCompanyView)
+        addCompanyView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        addCompanyView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        addCompanyView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        addCompanyView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        
+        view.addSubview(companiesTableView)
+        companiesTableView.topAnchor.constraint(equalTo: addCompanyView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        companiesTableView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        companiesTableView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        companiesTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+    }
+    
+    
+    
+    
+    
     
     // Mark: Firestore queries
     
@@ -100,39 +156,33 @@ class CompaniesViewController: UIViewController {
             self.companies = models
             self.documents = snapshot.documents
             
-            // TODO: call reloadData() on tableView
+            self.companiesTableView.reloadData()
         }
+    }
+    
+    deinit {
+        listener?.remove()
     }
     
     // Mark: Write to Firestore
     
-//    func addCompanyToCollection(company: Company) {
-//        let collection = firestore.collection("companies")
-//        
-//        let company = Company(
-//            name: company.name,
-//            hasContact: company.hasContact,
-//            motivation: company.motivation,
-//            currentlyHiring: company.currentlyHiring
-//        )
-//
-//        collection.addDocument(data: company.dictionary)
-//    }
-//
+    func addCompanyToCollection(company: Company) {
+        let collection = firestore.collection("companies")
+        
+        let company = Company(
+            name: company.name,
+            hasContact: company.hasContact,
+            motivation: company.motivation,
+            currentlyHiring: company.currentlyHiring
+        )
+
+        collection.addDocument(data: company.dictionary)
+    }
+
     // Mark: Read from Firestore
     
     
-    // Mark: Set up the view
     
-    func setupView() {
-        view.addSubview(addCompanyView)
-        addCompanyView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        addCompanyView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        addCompanyView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        addCompanyView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        
-        print(addCompanyView.frame.origin)
-    }
 
 }
 
@@ -170,10 +220,35 @@ extension CompaniesViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == addCompanyView.companyNameTextField {
             if textField.text != nil, textField.text != "" {
-                print(textField.text ?? "Textfield Empty")
+                guard let text = textField.text else {
+                    return false
+                }
+                let company = Company(name: text)
+                
+                addCompanyView.resetAddCompanyView()
+                addCompanyView.companyNameTextField.resignFirstResponder()
+                addCompanyToCollection(company: company)
             } 
         }
         return true
     }
+}
+
+// Mark: UITableViewDelegate and UITableViewDataSource
+
+extension CompaniesViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return companies.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = companiesTableView.dequeueReusableCell(withIdentifier: "CompaniesTableViewCell", for: indexPath) as! CompaniesTableViewCell
+        
+        let company = companies[indexPath.row]
+        cell.populate(company: company)
+        return cell
+    }
+    
+    
 }
 
