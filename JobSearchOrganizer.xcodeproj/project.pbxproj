@@ -14,7 +14,6 @@
 		A3D765BE2218F877004B3041 /* CompaniesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765BD2218F877004B3041 /* CompaniesViewControllerTests.swift */; };
 		A3D765C02218F960004B3041 /* CollorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765BF2218F960004B3041 /* CollorPalette.swift */; };
 		A3D765CA2219E8D4004B3041 /* AddCompanyViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765C92219E8D4004B3041 /* AddCompanyViewTests.swift */; };
-		A3D765CC2219E93D004B3041 /* AddCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765CB2219E93D004B3041 /* AddCompanyView.swift */; };
 		A3D765CE2219F16A004B3041 /* TextFieldBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765CD2219F16A004B3041 /* TextFieldBorder.swift */; };
 		A3D765D12219F94C004B3041 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765D02219F94C004B3041 /* Company.swift */; };
 		A3D765D32219FB13004B3041 /* LocalCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765D22219FB13004B3041 /* LocalCollection.swift */; };
@@ -48,7 +47,6 @@
 		A3D765BD2218F877004B3041 /* CompaniesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesViewControllerTests.swift; sourceTree = "<group>"; };
 		A3D765BF2218F960004B3041 /* CollorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollorPalette.swift; sourceTree = "<group>"; };
 		A3D765C92219E8D4004B3041 /* AddCompanyViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyViewTests.swift; sourceTree = "<group>"; };
-		A3D765CB2219E93D004B3041 /* AddCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyView.swift; sourceTree = "<group>"; };
 		A3D765CD2219F16A004B3041 /* TextFieldBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBorder.swift; sourceTree = "<group>"; };
 		A3D765D02219F94C004B3041 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		A3D765D22219FB13004B3041 /* LocalCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCollection.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 		A3D765C52219E89B004B3041 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3D765CB2219E93D004B3041 /* AddCompanyView.swift */,
 				A3D765CD2219F16A004B3041 /* TextFieldBorder.swift */,
 				A3D765D8221A26B6004B3041 /* CompaniesTableViewCell.swift */,
 			);
@@ -375,7 +372,6 @@
 			files = (
 				A3D765C02218F960004B3041 /* CollorPalette.swift in Sources */,
 				A3D765BC2218F641004B3041 /* CompaniesViewController.swift in Sources */,
-				A3D765CC2219E93D004B3041 /* AddCompanyView.swift in Sources */,
 				A3D765D9221A26B6004B3041 /* CompaniesTableViewCell.swift in Sources */,
 				A3D765CE2219F16A004B3041 /* TextFieldBorder.swift in Sources */,
 				A3D765D12219F94C004B3041 /* Company.swift in Sources */,
