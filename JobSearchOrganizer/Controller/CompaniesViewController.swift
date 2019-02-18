@@ -58,13 +58,13 @@ class CompaniesViewController: UIViewController {
         navigationItem.title = "Companies"
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "Avenir", size: 28)!,
-            NSAttributedString.Key.foregroundColor: UIColor.Primary.lightText
+            NSAttributedString.Key.foregroundColor: UIColor.Text.white
         ]
         
         if #available(iOS 11, *) {
             navigationController?.navigationBar.largeTitleTextAttributes = [
                 NSAttributedString.Key.font: UIFont(name: "Avenir", size: 34)!,
-                NSAttributedString.Key.foregroundColor: UIColor.Primary.lightText
+                NSAttributedString.Key.foregroundColor: UIColor.Text.white
             ]
         }
         
@@ -108,6 +108,7 @@ class CompaniesViewController: UIViewController {
         companiesTableView.delegate = self
         companiesTableView.dataSource = self
         companiesTableView.register(CompaniesTableViewCell.self, forCellReuseIdentifier: "CompaniesTableViewCell")
+        companiesTableView.separatorStyle = .none
         query = baseQuery()
     }
     
@@ -251,7 +252,7 @@ extension CompaniesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = companiesTableView.dequeueReusableCell(withIdentifier: "CompaniesTableViewCell", for: indexPath) as! CompaniesTableViewCell
         
-        cell.contactButton.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)
+        cell.contactQuestionView.pickerButton.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)
         
         let company = companies[indexPath.row]
         cell.populate(company: company)
@@ -262,8 +263,17 @@ extension CompaniesViewController: UITableViewDelegate, UITableViewDataSource {
         return 132.0
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.Background.blue
+        } else {
+            cell.backgroundColor = UIColor.Background.white
+        }
+    }
+    
     @objc func contactButtonTapped(_ sender: UIButton) {
         contactsPickerView = UIPickerView()
+        contactsPickerView.backgroundColor = UIColor.Background.lightGray
         contactsPickerView.dataSource = self
         contactsPickerView.delegate = self
         contactsPickerView.translatesAutoresizingMaskIntoConstraints = false
