@@ -11,8 +11,15 @@ import FirebaseFirestore
 
 class CompaniesViewController: UIViewController {
     
+    let contactPickerViewData = ["No", "Yes"]
+    let motivationPickerViewData = [1, 2, 3, 4, 5]
+    let currentlyHiringPickerViewData = [1, 2, 3]
+    
     var addCompanyView: AddCompanyView!
     var companiesTableView: UITableView!
+    var contactsPickerView: UIPickerView!
+    var motivationPickerView: UIPickerView!
+    var currentlyHiringPickerView: UIPickerView!
     
     let firestore = Firestore.firestore()
     private var listener: ListenerRegistration?
@@ -244,11 +251,72 @@ extension CompaniesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = companiesTableView.dequeueReusableCell(withIdentifier: "CompaniesTableViewCell", for: indexPath) as! CompaniesTableViewCell
         
+        cell.contactButton.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)
+        
         let company = companies[indexPath.row]
         cell.populate(company: company)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 132.0
+    }
     
+    @objc func contactButtonTapped(_ sender: UIButton) {
+        contactsPickerView = UIPickerView()
+        contactsPickerView.dataSource = self
+        contactsPickerView.delegate = self
+        contactsPickerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(contactsPickerView)
+        contactsPickerView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        contactsPickerView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        contactsPickerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        contactsPickerView.heightAnchor.constraint(equalToConstant: 200.0).isActive = true
+    }
+    
+}
+
+extension CompaniesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        var numberOfRows: Int = 0
+        if pickerView == contactsPickerView {
+            numberOfRows = contactPickerViewData.count
+        } else if pickerView == motivationPickerView {
+            numberOfRows = motivationPickerViewData.count
+        } else if pickerView == currentlyHiringPickerView {
+            numberOfRows = currentlyHiringPickerViewData.count
+        }
+        
+        return numberOfRows
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == contactsPickerView {
+            print(contactPickerViewData[row])
+        } else if pickerView == motivationPickerView {
+            print(motivationPickerViewData[row])
+        } else if pickerView == currentlyHiringPickerView {
+            print(currentlyHiringPickerViewData[row])
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        var title: String = ""
+        if pickerView == contactsPickerView {
+            title = contactPickerViewData[row]
+        } else if pickerView == motivationPickerView {
+            title = String(motivationPickerViewData[row])
+        } else if pickerView == currentlyHiringPickerView {
+            title = String(currentlyHiringPickerViewData[row])
+        }
+        
+        return title
+    }
 }
 
