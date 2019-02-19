@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A464740053CB005F057C93B /* Pods_JobSearchOrganizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E026684F40F5373128D74F2 /* Pods_JobSearchOrganizer.framework */; };
+		A39B4BDD221C490F001C0A35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A39B4BDC221C490F001C0A35 /* GoogleService-Info.plist */; };
 		A3D765B82218F50E004B3041 /* TabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765B72218F50E004B3041 /* TabBarControllerTests.swift */; };
 		A3D765BA2218F552004B3041 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765B92218F552004B3041 /* TabBarController.swift */; };
 		A3D765BC2218F641004B3041 /* CompaniesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765BB2218F641004B3041 /* CompaniesViewController.swift */; };
@@ -24,7 +25,6 @@
 		A3FEC18821A9F9220099925C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18621A9F9220099925C /* Main.storyboard */; };
 		A3FEC18A21A9F9240099925C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18921A9F9240099925C /* Assets.xcassets */; };
 		A3FEC18D21A9F9240099925C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC18B21A9F9240099925C /* LaunchScreen.storyboard */; };
-		A3FEC1A321AA0B1A0099925C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3FEC1A221AA0B1A0099925C /* GoogleService-Info.plist */; };
 		FEA346AA01255AD28B866E9C /* Pods_JobSearchOrganizerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C0BC6D1F05ED6DFA33BC7D /* Pods_JobSearchOrganizerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +43,7 @@
 		5E026684F40F5373128D74F2 /* Pods_JobSearchOrganizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobSearchOrganizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC511E65BF9302140440665 /* Pods-JobSearchOrganizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobSearchOrganizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer.release.xcconfig"; sourceTree = "<group>"; };
 		85C0BC6D1F05ED6DFA33BC7D /* Pods_JobSearchOrganizerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobSearchOrganizerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A39B4BDC221C490F001C0A35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3D765B72218F50E004B3041 /* TabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerTests.swift; sourceTree = "<group>"; };
 		A3D765B92218F552004B3041 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A3D765BB2218F641004B3041 /* CompaniesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		A3FEC18E21A9F9240099925C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3FEC19321A9F9240099925C /* JobSearchOrganizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobSearchOrganizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FEC19921A9F9240099925C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3FEC1A221AA0B1A0099925C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE00469D6228BF9596B850AC /* Pods-JobSearchOrganizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobSearchOrganizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JobSearchOrganizerTests/Pods-JobSearchOrganizerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC1247FF7C37D38B56B53BF2 /* Pods-JobSearchOrganizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobSearchOrganizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,7 +185,7 @@
 				A3FEC18921A9F9240099925C /* Assets.xcassets */,
 				A3FEC18B21A9F9240099925C /* LaunchScreen.storyboard */,
 				A3FEC18E21A9F9240099925C /* Info.plist */,
-				A3FEC1A221AA0B1A0099925C /* GoogleService-Info.plist */,
+				A39B4BDC221C490F001C0A35 /* GoogleService-Info.plist */,
 				A3D765BF2218F960004B3041 /* CollorPalette.swift */,
 			);
 			path = JobSearchOrganizer;
@@ -287,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3FEC18D21A9F9240099925C /* LaunchScreen.storyboard in Resources */,
-				A3FEC1A321AA0B1A0099925C /* GoogleService-Info.plist in Resources */,
+				A39B4BDD221C490F001C0A35 /* GoogleService-Info.plist in Resources */,
 				A3FEC18A21A9F9240099925C /* Assets.xcassets in Resources */,
 				A3FEC18821A9F9220099925C /* Main.storyboard in Resources */,
 			);

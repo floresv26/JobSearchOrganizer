@@ -99,14 +99,6 @@ class CompaniesTableViewCell: UITableViewCell {
     
     func populate(company: Company) {
         nameLabel.text = company.name
-        if company.hasContact != 0 {
-            contactQuestionView.questionLabel.text = "Contact"
-            let title = contactPickerViewData[company.hasContact]
-            contactQuestionView.pickerButton.setTitle(title, for: .normal)
-        }
-        print("Has Contact: \(company.hasContact)")
-        print("Motivation level: \(company.motivation)")
-        print("Currently Hiring: \(company.currentlyHiring)")
     }
 
 }

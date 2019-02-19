@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
 
 struct Company {
     
     var name: String
-    var hasContact: Int = 0
-    var motivation: Int = 0
-    var currentlyHiring: Int = 0
+    var hasContact: Int
+    var motivation: Int
+    var currentlyHiring: Int
     
     var dictionary: [String: Any] {
         return [
@@ -24,14 +26,14 @@ struct Company {
         ]
     }
     
-    init(name: String) {
-        self.name = name
-    }
-    
-    init(name: String, hasContact: Int?,
-         motivation: Int?, currentlyHiring: Int?) {
-        self.name = name
-    }
+//    init(name: String) {
+//        self.name = name
+//    }
+//
+//    init(name: String, hasContact: Int?,
+//         motivation: Int?, currentlyHiring: Int?) {
+//        self.name = name
+//    }
     
 }
 

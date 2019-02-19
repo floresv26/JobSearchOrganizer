@@ -111,7 +111,12 @@ class CompaniesViewController: UIViewController {
             return
         }
         
-        let company = Company(name: validatedText)
+        let company = Company(
+            name: validatedText,
+            hasContact: 1,
+            motivation: 1,
+            currentlyHiring: 1
+        )
         
         addCompanyView.resetAddCompanyView()
         addCompanyView.companyNameTextField.resignFirstResponder()
@@ -245,7 +250,12 @@ extension CompaniesViewController: UITextFieldDelegate {
                 guard let text = textField.text else {
                     return false
                 }
-                let company = Company(name: text)
+                let company = Company(
+                    name: text,
+                    hasContact: 1,
+                    motivation: 1,
+                    currentlyHiring: 1
+                )
                 
                 addCompanyView.resetAddCompanyView()
                 addCompanyView.companyNameTextField.resignFirstResponder()
@@ -267,10 +277,10 @@ extension CompaniesViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = companiesTableView.dequeueReusableCell(withIdentifier: "CompaniesTableViewCell", for: indexPath) as! CompaniesTableViewCell
         
         cell.selectionStyle = .none
-        
-        cell.contactQuestionView.pickerButton.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)
-        cell.motivationQuestionView.pickerButton.addTarget(self, action: #selector(motivationButtonTapped), for: .touchUpInside)
-        cell.hiringQuestionView.pickerButton.addTarget(self, action: #selector(hiringButtonTapped), for: .touchUpInside)
+//
+//        cell.contactQuestionView.pickerButton.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)
+//        cell.motivationQuestionView.pickerButton.addTarget(self, action: #selector(motivationButtonTapped), for: .touchUpInside)
+//        cell.hiringQuestionView.pickerButton.addTarget(self, action: #selector(hiringButtonTapped), for: .touchUpInside)
 
         let company = companies[indexPath.row]
         cell.populate(company: company)
@@ -289,96 +299,96 @@ extension CompaniesViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    @objc func contactButtonTapped(_ sender: UIButton) {
-        contactsPickerView = SelectionPickerView()
-        contactsPickerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160.0)
-        contactsPickerView.backgroundColor = UIColor.Background.gray
-        contactsPickerView.pickerView.dataSource = self
-        contactsPickerView.pickerView.delegate = self
-        contactsPickerView.translatesAutoresizingMaskIntoConstraints = false
-
-        self.view.addSubview(contactsPickerView)
-        contactsPickerView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        contactsPickerView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        contactsPickerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        contactsPickerView.heightAnchor.constraint(equalToConstant: 160.0).isActive = true
-    }
+//    @objc func contactButtonTapped(_ sender: UIButton) {
+//        contactsPickerView = SelectionPickerView()
+//        contactsPickerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160.0)
+//        contactsPickerView.backgroundColor = UIColor.Background.gray
+//        contactsPickerView.pickerView.dataSource = self
+//        contactsPickerView.pickerView.delegate = self
+//        contactsPickerView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        self.view.addSubview(contactsPickerView)
+//        contactsPickerView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
+//        contactsPickerView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
+//        contactsPickerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+//        contactsPickerView.heightAnchor.constraint(equalToConstant: 160.0).isActive = true
+//    }
     
-    @objc func motivationButtonTapped(_ sender: UIButton) {
-        motivationPickerView = SelectionPickerView()
-        motivationPickerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160.0)
-        motivationPickerView.backgroundColor = UIColor.Background.gray
-        motivationPickerView.pickerView.dataSource = self
-        motivationPickerView.pickerView.delegate = self
-        motivationPickerView.translatesAutoresizingMaskIntoConstraints = false
-
-        self.view.addSubview(motivationPickerView)
-        motivationPickerView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        motivationPickerView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        motivationPickerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        motivationPickerView.heightAnchor.constraint(equalToConstant: 160.0).isActive = true
-    }
-    
-    @objc func hiringButtonTapped(_ sender: UIButton) {
-        currentlyHiringPickerView = SelectionPickerView()
-        currentlyHiringPickerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160.0)
-        currentlyHiringPickerView.backgroundColor = UIColor.Background.gray
-        currentlyHiringPickerView.pickerView.dataSource = self
-        currentlyHiringPickerView.pickerView.delegate = self
-        currentlyHiringPickerView.translatesAutoresizingMaskIntoConstraints = false
-
-        self.view.addSubview(currentlyHiringPickerView)
-        currentlyHiringPickerView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        currentlyHiringPickerView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        currentlyHiringPickerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        currentlyHiringPickerView.heightAnchor.constraint(equalToConstant: 160.0).isActive = true
-    }
+//    @objc func motivationButtonTapped(_ sender: UIButton) {
+//        motivationPickerView = SelectionPickerView()
+//        motivationPickerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160.0)
+//        motivationPickerView.backgroundColor = UIColor.Background.gray
+//        motivationPickerView.pickerView.dataSource = self
+//        motivationPickerView.pickerView.delegate = self
+//        motivationPickerView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        self.view.addSubview(motivationPickerView)
+//        motivationPickerView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
+//        motivationPickerView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
+//        motivationPickerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+//        motivationPickerView.heightAnchor.constraint(equalToConstant: 160.0).isActive = true
+//    }
+//
+//    @objc func hiringButtonTapped(_ sender: UIButton) {
+//        currentlyHiringPickerView = SelectionPickerView()
+//        currentlyHiringPickerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160.0)
+//        currentlyHiringPickerView.backgroundColor = UIColor.Background.gray
+//        currentlyHiringPickerView.pickerView.dataSource = self
+//        currentlyHiringPickerView.pickerView.delegate = self
+//        currentlyHiringPickerView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        self.view.addSubview(currentlyHiringPickerView)
+//        currentlyHiringPickerView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
+//        currentlyHiringPickerView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
+//        currentlyHiringPickerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+//        currentlyHiringPickerView.heightAnchor.constraint(equalToConstant: 160.0).isActive = true
+//    }
     
 }
 
-extension CompaniesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        var numberOfRows: Int = 0
-        if pickerView == contactsPickerView.pickerView {
-            numberOfRows = contactPickerViewData.count
-        } else if pickerView == motivationPickerView.pickerView {
-            numberOfRows = motivationPickerViewData.count
-        } else if pickerView == currentlyHiringPickerView.pickerView {
-            numberOfRows = currentlyHiringPickerViewData.count
-        }
-        
-        return numberOfRows
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == contactsPickerView.pickerView {
-            self.view.endEditing(true)
-        } else if pickerView == motivationPickerView.pickerView {
-            pickerView.isHidden = true
-        } else if pickerView == currentlyHiringPickerView.pickerView {
-            pickerView.isHidden = true
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        var title: String = ""
-        if pickerView == contactsPickerView.pickerView {
-            let data = contactPickerViewData.sorted(by: { $0.key > $1.key })
-            title = data[row].value
-        } else if pickerView == motivationPickerView.pickerView {
-            let data = motivationPickerViewData.sorted(by: { $0.key > $1.key })
-            title = data[row].value
-        } else if pickerView == currentlyHiringPickerView.pickerView {
-            let data = currentlyHiringPickerViewData.sorted(by: { $0.key > $1.key })
-            title = data[row].value
-        }
-        
-        return title
-    }
-}
+//extension CompaniesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+//
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        var numberOfRows: Int = 0
+//        if pickerView == contactsPickerView.pickerView {
+//            numberOfRows = contactPickerViewData.count
+//        } else if pickerView == motivationPickerView.pickerView {
+//            numberOfRows = motivationPickerViewData.count
+//        } else if pickerView == currentlyHiringPickerView.pickerView {
+//            numberOfRows = currentlyHiringPickerViewData.count
+//        }
+//
+//        return numberOfRows
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        if pickerView == contactsPickerView.pickerView {
+//            self.view.endEditing(true)
+//        } else if pickerView == motivationPickerView.pickerView {
+//            pickerView.isHidden = true
+//        } else if pickerView == currentlyHiringPickerView.pickerView {
+//            pickerView.isHidden = true
+//        }
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        var title: String = ""
+//        if pickerView == contactsPickerView.pickerView {
+//            let data = contactPickerViewData.sorted(by: { $0.key > $1.key })
+//            title = data[row].value
+//        } else if pickerView == motivationPickerView.pickerView {
+//            let data = motivationPickerViewData.sorted(by: { $0.key > $1.key })
+//            title = data[row].value
+//        } else if pickerView == currentlyHiringPickerView.pickerView {
+//            let data = currentlyHiringPickerViewData.sorted(by: { $0.key > $1.key })
+//            title = data[row].value
+//        }
+//
+//        return title
+//    }
+//}
 
