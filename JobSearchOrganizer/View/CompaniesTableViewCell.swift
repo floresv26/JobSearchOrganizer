@@ -82,23 +82,38 @@ class CompaniesTableViewCell: UITableViewCell {
         contactQuestionView.topAnchor.constraint(equalTo: nameLabel.safeAreaLayoutGuide.bottomAnchor, constant: 10.0).isActive = true
         contactQuestionView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 16.0).isActive = true
         contactQuestionView.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -16.0).isActive = true
-        contactQuestionView.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        contactQuestionView.heightAnchor.constraint(equalToConstant: 18.0).isActive = true
         
         addSubview(motivationQuestionView)
         motivationQuestionView.topAnchor.constraint(equalTo: contactQuestionView.safeAreaLayoutGuide.bottomAnchor, constant: 8.0).isActive = true
         motivationQuestionView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 16.0).isActive = true
         motivationQuestionView.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -16.0).isActive = true
-        motivationQuestionView.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        motivationQuestionView.heightAnchor.constraint(equalToConstant: 18.0).isActive = true
         
         addSubview(hiringQuestionView)
         hiringQuestionView.topAnchor.constraint(equalTo: motivationQuestionView.safeAreaLayoutGuide.bottomAnchor, constant: 8.0).isActive = true
         hiringQuestionView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 16.0).isActive = true
         hiringQuestionView.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -16.0).isActive = true
-        hiringQuestionView.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        hiringQuestionView.heightAnchor.constraint(equalToConstant: 18.0).isActive = true
     }
     
     func populate(company: Company) {
         nameLabel.text = company.name
+        if company.hasContact != 0 {
+            contactQuestionView.questionLabel.text = "Have contact:"
+            let title = contactPickerViewData[company.hasContact]
+            contactQuestionView.pickerButton.setTitle(title, for: .normal)
+        }
+        if company.motivation != 0 {
+            motivationQuestionView.questionLabel.text = "Motivation level:"
+            let title = motivationPickerViewData[company.motivation]
+            motivationQuestionView.pickerButton.setTitle(title, for: .normal)
+        }
+        if company.currentlyHiring != 0 {
+            hiringQuestionView.questionLabel.text = "Positions available:"
+            let title = currentlyHiringPickerViewData[company.currentlyHiring]
+            hiringQuestionView.pickerButton.setTitle(title, for: .normal)
+        }
     }
 
 }
@@ -106,7 +121,7 @@ class CompaniesTableViewCell: UITableViewCell {
 class QuestionsView: UIView {
     lazy var questionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Avenir", size: 15)
+        label.font = UIFont(name: "Avenir", size: 14)
         label.textColor = UIColor.Text.lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -115,6 +130,9 @@ class QuestionsView: UIView {
     lazy var pickerButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.system)
         button.setTitle("Select", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Avenir", size: 14)
+        button.contentHorizontalAlignment = .left
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -136,9 +154,9 @@ class QuestionsView: UIView {
         questionLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor).isActive = true
         
         addSubview(pickerButton)
-        pickerButton.leftAnchor.constraint(equalTo: questionLabel.safeAreaLayoutGuide.rightAnchor, constant: 16.0).isActive = true
+        pickerButton.leftAnchor.constraint(equalTo: questionLabel.safeAreaLayoutGuide.rightAnchor, constant: 8.0).isActive = true
         pickerButton.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
-        pickerButton.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+        pickerButton.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -16.0).isActive = true
         pickerButton.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor).isActive = true
         
     }

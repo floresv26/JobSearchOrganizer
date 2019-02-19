@@ -61,6 +61,7 @@ class AddCompanyView: UIView {
     func resetAddCompanyView() {
         companyNameTextField.text = nil
         addCompanyButton.isEnabled = false
+        companyNameTextField.resignFirstResponder()
     }
     
 }

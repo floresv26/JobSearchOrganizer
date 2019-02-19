@@ -9,14 +9,18 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         setupViewControllers()
     }
     
     func setupViewControllers() {
+        tabBar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         let companiesViewController = UINavigationController(rootViewController: CompaniesViewController())
         companiesViewController.tabBarItem.title = "Companies"
         
