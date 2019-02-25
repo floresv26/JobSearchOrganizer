@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A464740053CB005F057C93B /* Pods_JobSearchOrganizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E026684F40F5373128D74F2 /* Pods_JobSearchOrganizer.framework */; };
+		A37F20682224611100934716 /* FirestoreConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37F20672224611100934716 /* FirestoreConnection.swift */; };
 		A39B4BDD221C490F001C0A35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A39B4BDC221C490F001C0A35 /* GoogleService-Info.plist */; };
 		A3D765B82218F50E004B3041 /* TabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765B72218F50E004B3041 /* TabBarControllerTests.swift */; };
 		A3D765BA2218F552004B3041 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D765B92218F552004B3041 /* TabBarController.swift */; };
@@ -43,6 +44,7 @@
 		5E026684F40F5373128D74F2 /* Pods_JobSearchOrganizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobSearchOrganizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC511E65BF9302140440665 /* Pods-JobSearchOrganizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobSearchOrganizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-JobSearchOrganizer/Pods-JobSearchOrganizer.release.xcconfig"; sourceTree = "<group>"; };
 		85C0BC6D1F05ED6DFA33BC7D /* Pods_JobSearchOrganizerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobSearchOrganizerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A37F20672224611100934716 /* FirestoreConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConnection.swift; sourceTree = "<group>"; };
 		A39B4BDC221C490F001C0A35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3D765B72218F50E004B3041 /* TabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerTests.swift; sourceTree = "<group>"; };
 		A3D765B92218F552004B3041 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				A3D765D02219F94C004B3041 /* Company.swift */,
 				A3D765D22219FB13004B3041 /* LocalCollection.swift */,
+				A37F20672224611100934716 /* FirestoreConnection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			files = (
 				A3D765C02218F960004B3041 /* CollorPalette.swift in Sources */,
 				A3D765BC2218F641004B3041 /* CompaniesViewController.swift in Sources */,
+				A37F20682224611100934716 /* FirestoreConnection.swift in Sources */,
 				A3D765D9221A26B6004B3041 /* CompaniesTableViewCell.swift in Sources */,
 				A3D765DF221B0F2C004B3041 /* SelectionPickerView.swift in Sources */,
 				A3D765CE2219F16A004B3041 /* TextFieldBorder.swift in Sources */,
@@ -553,6 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3YLCP7U59;
 				INFOPLIST_FILE = JobSearchOrganizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,6 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3YLCP7U59;
 				INFOPLIST_FILE = JobSearchOrganizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

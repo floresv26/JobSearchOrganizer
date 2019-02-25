@@ -25,14 +25,14 @@ class AddCompanyViewTests: XCTestCase {
         XCTAssertNotNil(sut.companyNameTextField)
     }
     
-    func test_AddCompanyButton_WhenViewInitialized_IsNotNil() {
-        XCTAssertNotNil(sut.addCompanyButton)
-    }
-    
-    func test_ActivityNameTextField_WhenViewInitialized_IsIsDescendantOfView() {
+    func test_CompanyNameTextField_IsDescendantOfView() {
         XCTAssertTrue(sut.companyNameTextField.isDescendant(of: sut))
     }
     
+    func test_AddCompanyButton_WhenViewInitialized_IsNotNil() {
+        XCTAssertNotNil(sut.addCompanyButton)
+    }
+
     func test_AddButton_WhenViewInitialized_IsIsDescendantOfView() {
         XCTAssertTrue(sut.addCompanyButton.isDescendant(of: sut))
     }

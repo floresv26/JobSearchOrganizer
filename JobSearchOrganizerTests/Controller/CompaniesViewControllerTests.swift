@@ -25,73 +25,73 @@ class CompaniesViewControllerTests: XCTestCase {
     func test_NavigationTitle_IsNotNil() {
         XCTAssertNotNil(sut.navigationItem.title)
     }
-    
+
     func test_NavigationTitle_IsCompanies() {
         let title = sut.navigationItem.title
-        
+
         XCTAssertEqual(title, "Companies")
     }
-    
+
     func test_AddCompanyView_AfterViewDidLoad_IsNotNil() {
         XCTAssertNotNil(sut.addCompanyView)
     }
-    
+
     func test_AddCompanyView_IsDescendantOfView() {
         XCTAssertTrue(sut.addCompanyView.isDescendant(of: sut.view))
     }
-    
-    func test_CompaniesTableView_AfterViewDidLoad_IsNotNil() {
-        XCTAssertNotNil(sut.companiesTableView)
-    }
-    
-    func test_LoadingView_SetsTableViewDataSource() {
-        XCTAssertTrue(sut.companiesTableView.dataSource is CompaniesViewController)
-    }
-    
-    func test_LoadingView_SetsTableViewDelegate() {
-        XCTAssertTrue(sut.companiesTableView.delegate is CompaniesViewController)
-    }
-    
-//    func test_ContactsPickerView_ContactButtonTapped_IsDispalyed() {
-//        let mockTableView = MockTableView.mockTableView(withDataSource: sut as UITableViewDataSource)
-//
-//        let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockItemCell
-//
-//        cell.contactQuestionView.pickerButton.sendActions(for: .touchUpInside)
-//
-//        XCTAssertTrue(sut.contactsPickerView.isDescendant(of: sut.view))
+
+//    func test_CompaniesTableView_AfterViewDidLoad_IsNotNil() {
+//        XCTAssertNotNil(sut.companiesTableView)
 //    }
-
-}
-
-extension CompaniesViewControllerTests {
-    class MockTableView: UITableView {
-        var cellGotDequeued = false
-        
-        override func dequeueReusableCell(withIdentifier identifier: String,
-                                          for indexPath: IndexPath) -> UITableViewCell {
-            cellGotDequeued = true
-            
-            return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        }
-        
-        class func mockTableView(withDataSource dataSource: UITableViewDataSource) -> MockTableView {
-            let mockTableView = MockTableView(
-                frame: CGRect(x: 0, y: 0, width: 1125, height: 2436),
-                style: .plain)
-            
-            mockTableView.dataSource = dataSource
-            mockTableView.register(MockItemCell.self, forCellReuseIdentifier: "CompaniesTableViewCell")
-            
-            return mockTableView
-        }
-    }
-    
-    class MockItemCell: CompaniesTableViewCell {
-        var catchedItem: Company?
-        
-        override func populate(company: Company) {
-            catchedItem = company
-        }
-    }
+//
+//    func test_LoadingView_SetsTableViewDataSource() {
+//        XCTAssertTrue(sut.companiesTableView.dataSource is CompaniesViewController)
+//    }
+//
+//    func test_LoadingView_SetsTableViewDelegate() {
+//        XCTAssertTrue(sut.companiesTableView.delegate is CompaniesViewController)
+//    }
+//
+////    func test_ContactsPickerView_ContactButtonTapped_IsDispalyed() {
+////        let mockTableView = MockTableView.mockTableView(withDataSource: sut as UITableViewDataSource)
+////
+////        let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockItemCell
+////
+////        cell.contactQuestionView.pickerButton.sendActions(for: .touchUpInside)
+////
+////        XCTAssertTrue(sut.contactsPickerView.isDescendant(of: sut.view))
+////    }
+//
+//}
+//
+//extension CompaniesViewControllerTests {
+//    class MockTableView: UITableView {
+//        var cellGotDequeued = false
+//
+//        override func dequeueReusableCell(withIdentifier identifier: String,
+//                                          for indexPath: IndexPath) -> UITableViewCell {
+//            cellGotDequeued = true
+//
+//            return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+//        }
+//
+//        class func mockTableView(withDataSource dataSource: UITableViewDataSource) -> MockTableView {
+//            let mockTableView = MockTableView(
+//                frame: CGRect(x: 0, y: 0, width: 1125, height: 2436),
+//                style: .plain)
+//
+//            mockTableView.dataSource = dataSource
+//            mockTableView.register(MockItemCell.self, forCellReuseIdentifier: "CompaniesTableViewCell")
+//
+//            return mockTableView
+//        }
+//    }
+//
+//    class MockItemCell: CompaniesTableViewCell {
+//        var catchedItem: Company?
+//
+//        override func populate(company: Company) {
+//            catchedItem = company
+//        }
+//    }
 }
