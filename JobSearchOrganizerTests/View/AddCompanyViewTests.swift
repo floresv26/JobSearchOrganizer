@@ -36,5 +36,6 @@ class AddCompanyViewTests: XCTestCase {
     func test_AddButton_WhenViewInitialized_IsIsDescendantOfView() {
         XCTAssertTrue(sut.addCompanyButton.isDescendant(of: sut))
     }
-
+    
+    
 }

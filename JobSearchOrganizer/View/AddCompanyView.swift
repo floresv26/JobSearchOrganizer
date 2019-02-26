@@ -23,7 +23,6 @@ class AddCompanyView: UIView {
     
     lazy var companyNameTextField: TextFieldBorder = {
         let textField = TextFieldBorder()
-//        textField.frame = CGRect(x: 0, y: 0, width: 250.0, height: 30.0)
         textField.placeholder = "Add a company..."
         textField.font = UIFont(name: "Avenir", size: 17)
         textField.keyboardType = UIKeyboardType.default
@@ -36,7 +35,6 @@ class AddCompanyView: UIView {
     lazy var addCompanyButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.system)
         button.setImage(UIImage(named: "add_dark.png"), for: .normal)
-//        button.frame = CGRect(x: 0, y: 0, width: 24.0, height: 24.0)
         button.isEnabled = false
         button.addTarget(self, action: #selector(addCompanyButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -59,13 +57,13 @@ class AddCompanyView: UIView {
     }
     
     @objc func addCompanyButtonTapped(_ sender: UIButton) {
-        
-    }
-    
-    func resetAddCompanyView() {
+        guard let validatedText = companyNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !validatedText.isEmpty else {
+            return print("Invalid text entered")
+        }
+        companyNameTextField.resignFirstResponder()
         companyNameTextField.text = nil
         addCompanyButton.isEnabled = false
-        companyNameTextField.resignFirstResponder()
+        print(validatedText)
     }
     
 }

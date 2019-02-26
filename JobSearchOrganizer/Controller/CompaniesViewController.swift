@@ -82,6 +82,8 @@ class CompaniesViewController: UIViewController {
         
 //        initializeAddCompanyView()
 //        initializeCompaniesTableView()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
         setupView()
         
     }
@@ -89,6 +91,10 @@ class CompaniesViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 //        stopObserving()
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     
@@ -234,12 +240,6 @@ extension CompaniesViewController: UITextFieldDelegate {
         return true
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == addCompanyView.companyNameTextField {
-            textField.resignFirstResponder()
-        }
-    }
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == addCompanyView.companyNameTextField {
             if textField.text != nil, textField.text != "" {
@@ -252,9 +252,11 @@ extension CompaniesViewController: UITextFieldDelegate {
                     motivation: 0,
                     currentlyHiring: 0
                 )
-
-                addCompanyView.resetAddCompanyView()
+                
                 textField.resignFirstResponder()
+                textField.text = nil
+                addCompanyView.addCompanyButton.isEnabled = false
+                print(company.name)
 //                addCompanyToCollection(company: company)
             }
         }
